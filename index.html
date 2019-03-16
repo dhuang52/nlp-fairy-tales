@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSE457 - Once Upon A Time</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+	<!-- CSS libraries -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Custom CSS code -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<h1><span class="h1-sub">Correlation.</span></h1>
+				<h2>Interested in: How similar are English fairy tales?</h2>
+				<p class="info">Correlation is calculated using a bag of words model and then
+					measuring the cosine similarity. So, a score of 0 means there is a weak
+					correlation and 1 represents a strong correlation.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="infovis">
+				<div class="col-md-12">
+					<h3 id="shared-words"></h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<p class="info">The grid below is a correlation matrix. The color of the
+					circles represent the magnitude of the correlation. Try hovering over
+					and clicking on the nodes of the matrix to learn more about correlation
+					between two fairy tales!</p>
+				<ul>
+					<li class="info">Hovering will reveal a tooltip with the titles of the
+						fairy tales under observation, the cosine similarity score (listed
+						as "Similarity"), and the number of words shared between the texts.</li>
+					<li class="info">Clicking will modify the text above. The listed words
+						are the 5 most important words in the fairy tale determined by tf-idf
+						scores, and the numbers next to the words are the tf-idf scores.</li>
+				</ul>
+
+				<p class="info">I hope these two metrics effectivly show how correlation
+					vaires between fairy tales!</p>
+				<div id="legend"></div>
+				<div id="correlationvis"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Load JS libraries -->
+	<script type="text/javascript" src="bower_components/d3/d3.js"></script>
+	<script type="text/javascript" src="bower_components/d3-tip/index.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.9.0/d3-legend.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/queue.v1.min.js"></script>
+	<script src="js/d3.js"></script>
+
+	<!-- Visualization objects -->
+	<script src="js/correlationvis.js"></script>
+	<script src="js/infovis.js"></script>
+
+	<!-- Load data, create visualizations -->
+	<script src="js/main.js"></script>
+</body>
+</html>
